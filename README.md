@@ -13,8 +13,7 @@ The pipeline book is here: <https://mernlp.github.io/towbintools_rnai_screen_pip
 Read it before your first run. In particular:
 
 - **Getting started → Installation** — micromamba, conda env `towbintools_rnai_screen`, VS Code on the cluster
-- **Getting started → Running your first screen** — experiment layout, YAML config, `exp_folder_regex`, Slurm, rerun flags
-- **Getting started → Plate maps** — `doc/` and `report/` annotations
+- **Getting started → Running your first screen** — experiment layout, YAML config, plate annotations, `exp_folder_regex`, Slurm, rerun flags
 - **Building blocks** — segmentation and `morphology_computation_screen`
 - **Downstream analysis → Shiny dashboard** — loading combined CSVs, QC, hit calling
 

@@ -1,0 +1,27 @@
+version: 1
+project:
+  title: towbintools_rnai_screen_pipeline
+  authors:
+    - name: Merlyne Lawson
+    - name: Towbin Lab
+  toc:
+    - file: Landing.md
+    - title: Getting started
+      children:
+        - file: Installation.md
+        - file: RunningFirstPipeline.md
+    - title: Building blocks
+      children:
+        - file: BuildingBlock.md
+        - file: Segmentation.md
+        - file: MorphologyComputationScreen.md
+    - title: Downstream analysis
+      children:
+        - file: ShinyDashboard.md
+site:
+  options:
+    logo: images/logo_dark.png
+    logo_dark: images/logo_light.png
+    favicon: images/favicon.ico
+    folders: True
+  template: book-theme
