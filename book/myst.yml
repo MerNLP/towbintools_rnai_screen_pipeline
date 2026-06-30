@@ -19,9 +19,4 @@ project:
       children:
         - file: ShinyDashboard.md
 site:
-  options:
-    logo: images/logo_dark.png
-    logo_dark: images/logo_light.png
-    favicon: images/favicon.ico
-    folders: True
   template: book-theme
