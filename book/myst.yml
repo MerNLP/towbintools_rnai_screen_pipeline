@@ -2,7 +2,7 @@ version: 1
 project:
   title: towbintools_rnai_screen_pipeline
   authors:
-    - name: Merlyne Lawson
+    - name: Merlyne Lawrence
     - name: Towbin Lab
   toc:
     - file: Landing.md
