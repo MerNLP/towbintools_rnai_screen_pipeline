@@ -30,6 +30,8 @@ cd towbintools_rnai_screen_pipeline
 
 Then follow **Installation** in the book (micromamba + `requirements/rnai_screen/install_environment.sh`).
 
+If `install_environment.sh` fails because `conda-lock.yml` is missing, see **Installation** in the book: run `./generate_lock.sh` in `requirements/rnai_screen/`, or create the env from `environment.yml` directly.
+
 ## Running the pipeline
 
 1. Read the book (link above).
