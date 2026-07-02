@@ -1,0 +1,57 @@
+# Set experiment_dir to your screen folder (must contain raw/ and plate maps under doc/ or report/).
+experiment_dir: "/path/to/your/experiment/"
+raw_dir_name: "raw"
+
+# Where masks and pipeline report files are written (default: experiment_dir/analysis/).
+# analysis_dir_name: "analysis"
+
+# Optional: write all analysis outputs to a different directory (e.g. shared scratch).
+# analysis_output_dir: "/path/to/analysis/output/"
+
+get_experiment_time: False
+
+building_blocks:
+  - "segmentation"   # body (ch2)
+  - "segmentation"   # pharynx (ch1)
+  - "morphology_computation_screen"
+
+rerun_segmentation: [False, False]
+rerun_morphology_computation_screen: [True]
+
+pixelsize: [1.625]
+
+segmentation_column: ['raw']
+segmentation_name_suffix: [null]
+segmentation_method: ["deep_learning", "deep_learning"]
+segmentation_channels: [[1], [0]]
+
+model_path: [
+  "/mnt/towbin.data/shared/spsalmon/towbinlab_segmentation_database/models/paper/body/towbintools_medium/best_light.ckpt",
+  "/mnt/towbin.data/shared/spsalmon/towbinlab_segmentation_database/models/paper/pharynx/towbintools_medium/best_light.ckpt",
+]
+batch_size: [2, 2]
+
+screen_body_root: ["analysis/ch2_seg"]
+screen_pharynx_root: ["analysis/ch1_seg"]
+
+exp_folder_regex:
+  - '^(?P<date>\d{8})_wBT(?P<strain>\d+)_(?P<plate>[^_]+)$'
+
+min_body_area_px: [15000]
+min_pharynx_area_px: [500]
+
+# Optional: override screen CSV paths (defaults: <analysis_subdir>/screen_report/).
+# screen_filemap_output: ["/path/to/screen_filemap.csv"]
+# well_output: ["/path/to/ch2_seg_ch1_seg_well_level.csv"]
+# gene_output: ["/path/to/ch2_seg_ch1_seg_gene_level.csv"]
+# combined_output: ["/path/to/ch2_seg_ch1_seg_combined.csv"]
+
+enable_object_level_measurements: [False]
+enable_qc_good_vs_error: [False]
+body_raw_channel: [1]
+pharynx_raw_channel: [0]
+
+sbatch_memory: 128G
+sbatch_time: 0-12:00:00
+sbatch_cpus: 16
+sbatch_gpus: "rtx2080ti:1"

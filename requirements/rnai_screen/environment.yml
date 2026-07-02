@@ -1,0 +1,42 @@
+# Repo: towbintools_rnai_screen_pipeline
+# Conda env: towbintools_rnai_screen (activate after install_environment.sh)
+#
+# Requires towbintools >= 0.4.1 (graceful handling of corrupt TIFFs in segmentation).
+#
+# Create env from lock file (recommended):
+#   ./install_environment.sh
+#
+# Or regenerate lock after editing this file:
+#   ./generate_lock.sh
+#
+# When copying into the repo, move this folder's contents to requirements/ at the repo root.
+
+name: towbintools_rnai_screen
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - numpy
+  - scipy
+  - pyyaml
+  - polars
+  - pyarrow
+  - joblib
+  - pip
+
+  # lock-file tooling 
+  - conda-lock
+
+  - pip:
+    # core: segmentation models + image I/O (torch/CUDA pulled in by towbintools on GPU nodes)
+    - towbintools==0.4.1
+
+    # morphology screen + dashboard
+    - tifffile
+    - xgboost
+    - opencv-python-headless
+    - shiny
+    - shinywidgets
+    - plotly
+    - pyvips
+    - pillow
